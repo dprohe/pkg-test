@@ -41,10 +41,9 @@ jobs:
         working-directory: ./doc
         run: jupyter-book build --html
       - name: Upload artifact
-        working-directory: ./doc
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './_build/html'
+          path: './doc/_build/html'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
