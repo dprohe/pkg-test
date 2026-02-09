@@ -1,0 +1,15 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: 0db45fb8-128d-4543-8b72-f55cb3c89c11
+  title: Test Jupyter Book
+  description:
+  keywords: [test, jupyter]
+  authors: [dprohe]
+  github: https://github.com/dprohe/pkg-test
+  # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
+site:
+  template: book-theme
+  # options:
+  #   favicon: favicon.ico
+  #   logo: site_logo.png
