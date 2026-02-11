@@ -6,7 +6,7 @@ authors = [
 ]
 description = "A package to learn CI/CD stuff, documentation, jupyter book, etc."
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
