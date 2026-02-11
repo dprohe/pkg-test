@@ -28,10 +28,7 @@ concurrency:
   group: 'pages'
   cancel-in-progress: false
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -39,7 +36,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -51,6 +47,20 @@ jobs:
       - name: Run Pytest
         run: |
           pytest --cov=pkg_test_dprohe --cov-report=term --cov-report=html
+      - name: Upload Coverage Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-${{ matrix.python-version }}
+          path: htmlcov/
+  deploy:
+    needs: test
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - uses: actions/setup-node@v4
@@ -61,6 +71,10 @@ jobs:
       - name: Build HTML Assets
         working-directory: ./doc
         run: jupyter-book build --html
+      - name: Download Coverage Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: "coverage-3.13"
       - name: Copy Coverage Files to Jupyter Book Output
         run: |
           mkdir -p ./doc/_build/html/coverage
