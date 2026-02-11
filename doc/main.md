@@ -6,3 +6,9 @@ This is a test book for my package.  I'm just trying to learn how all this stuff
 This is a subsection.
 
 Here is my coverage report: [coverage](coverage/index.html)
+
+Here is my coverage report: [coverage](/coverage/index.html)
+
+Here is my coverage report: [coverage](/pkg-test/coverage/index.html)
+
+Here is my coverage report: [coverage](pkg-test/coverage/index.html)
