@@ -58,9 +58,9 @@ jobs:
       - name: Run Pylint and Generate Report
         run: |
           pylint pkg_test_dprohe --output-format=json > pylint-report.json || true
-      - name: Convert to HTML
+      - name: Convert Pylint to HTML
         run: |
-          pylint-json2html -f pylint-report.json -o pylint-report.html
+          pylint-json2html -o pylint-report.html pylint-report.json
       - name: Upload Pylint HTML Report
         uses: actions/upload-artifact@v4
         with:
