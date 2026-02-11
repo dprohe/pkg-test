@@ -72,7 +72,7 @@ jobs:
         working-directory: ./doc
         run: jupyter-book build --html
       - name: Download Coverage Artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: "coverage-3.13"
       - name: Copy Coverage Files to Jupyter Book Output
