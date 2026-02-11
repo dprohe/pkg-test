@@ -57,7 +57,7 @@ jobs:
           path: htmlcov/
       - name: Run Pylint and Generate Report
         run: |
-          pylint pkg_test_dprohe --output-format=json > pylint-report.json || true
+          pylint pkg_test_dprohe --output-format=json2 > pylint-report.json || true
       - name: Convert Pylint to HTML
         run: |
           pylint-json2html -o pylint-report.html pylint-report.json
