@@ -7,9 +7,12 @@ on:
     # Runs on pushes targeting the default branch
     branches: 
       - main
+      - develop
   pull_request:
     branches:
       - main
+      - develop
+  workflow_dispatch:
 
 env:
   # `BASE_URL` determines, relative to the root of the domain, the URL that your site is served from.
@@ -52,7 +55,7 @@ jobs:
         with:
           name: coverage-${{ matrix.python-version }}
           path: htmlcov/
-  deploy:
+  build:
     needs: test
     environment:
       name: github-pages
@@ -92,6 +95,12 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: './doc/_build/html'
+      
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' # Only run on main
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
