@@ -75,6 +75,12 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: "coverage-3.13"
+      - name: Debug Directory Structure
+        run: |
+          echo "Contents of the working directory:"
+          ls -al
+          echo "Contents of htmlcov directory:"
+          ls -al htmlcov || echo "htmlcov directory does not exist"
       - name: Copy Coverage Files to Jupyter Book Output
         run: |
           mkdir -p ./doc/_build/html/coverage
