@@ -120,7 +120,7 @@ jobs:
         with:
           name: "lint"
       - name: Download API Artifacts
-        uses: actions/download-artifacts@v4
+        uses: actions/download-artifact@v4
         with:
           name: "api-docs"
           path: api
