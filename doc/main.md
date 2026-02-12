@@ -10,3 +10,7 @@ Here is my coverage report: [coverage](/coverage/index.html)
 Here is my lint report: [lint](/lint/pylint-report.html)
 
 Here is my API: [api](/api/index.html)
+
+Hover link test: [](xref:api)
+
+Hover link test: [Adder](xref:api#pkg_test_dprohe.extras.extras_1.Adder)
