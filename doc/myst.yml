@@ -8,6 +8,8 @@ project:
   authors: [dprohe]
   github: https://github.com/dprohe/pkg-test
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
+  references:
+    api: https://dprohe.github.io/pkg-test/api
 site:
   template: book-theme
   # options:

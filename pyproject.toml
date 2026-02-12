@@ -1,6 +1,6 @@
 [project]
 name = "pkg-test-dprohe"
-version = "0.0.1"
+version = '0.0.1'
 authors = [
   { name="dprohe", email="dprohe@sandia.gov" },
 ]
@@ -21,3 +21,4 @@ Issues = "https://github.com/pypa/sampleproject/issues"
 [project.optional-dependencies]
 test = ["pytest","pytest-cov"]
 lint = ["pylint","pylint-json2html"]
+doc = ["sphinx", "sphinx-book-theme", ]

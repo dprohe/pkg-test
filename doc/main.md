@@ -8,3 +8,5 @@ This is a subsection.
 Here is my coverage report: [coverage](/coverage/index.html)
 
 Here is my lint report: [lint](/lint/pylint-report.html)
+
+Here is my API: [api](/api/index.html)
