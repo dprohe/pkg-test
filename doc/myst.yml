@@ -10,6 +10,8 @@ project:
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
   references:
     api: https://dprohe.github.io/pkg-test/api
+  toc:
+    - file: main.md
 site:
   template: book-theme
   # options:

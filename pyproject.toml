@@ -19,6 +19,7 @@ Homepage = "https://github.com/pypa/sampleproject"
 Issues = "https://github.com/pypa/sampleproject/issues"
 
 [project.optional-dependencies]
-test = ["pytest","pytest-cov"]
-lint = ["pylint","pylint-json2html"]
-doc = ["sphinx", "sphinx-book-theme", ]
+test = ["pytest", "pytest-cov"]
+lint = ["pylint", "pylint-json2html"]
+api = ["sphinx", "sphinx-book-theme"]
+book = ["jupyter-server", "ipykernel"]

@@ -67,7 +67,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install .[lint,doc]
+          pip install .[lint,api]
       - name: Run Pylint and Generate Report
         run: |
           pylint pkg_test_dprohe --output-format=json > pylint-report.json || true
@@ -96,6 +96,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.13"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install .[book]
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - uses: actions/setup-node@v4
@@ -105,7 +113,7 @@ jobs:
         run: npm install -g jupyter-book
       - name: Build HTML Assets
         working-directory: ./doc
-        run: jupyter-book build --html
+        run: jupyter-book build --execute --html
       - name: Create Directory for Coverage Artifact
         run: mkdir -p htmlcov
       - name: Create Directory for API Docs
